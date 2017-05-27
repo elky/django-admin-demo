@@ -29,7 +29,7 @@ class Migration(migrations.Migration):
                 ('source', models.URLField(blank=True, help_text='Link to a source. Will be shown at the bottom of the news page')),
                 ('created_at', models.DateTimeField(default=django.utils.timezone.now)),
                 ('modified_at', models.DateTimeField(default=django.utils.timezone.now)),
-                ('author', models.ForeignKey(blank=True, help_text='Current user if empty', null=True, on_delete=django.db.models.deletion.CASCADE, to='authors.Author')),
+                ('author', models.ForeignKey(help_text='Current user if empty', on_delete=django.db.models.deletion.CASCADE, to='authors.Author')),
                 ('tags', models.ManyToManyField(blank=True, to='tags.Tag')),
             ],
             options={
