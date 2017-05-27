@@ -1,4 +1,5 @@
 from django.contrib import admin
+from demo.mixins import RestrictUpdate
 from .models import NewsEntry, NewsGallery
 
 
@@ -8,7 +9,7 @@ class NewsGalleryInline(admin.TabularInline):
 
 
 @admin.register(NewsEntry)
-class NewsEntryAdmin(admin.ModelAdmin):
+class NewsEntryAdmin(RestrictUpdate, admin.ModelAdmin):
     list_display = ['title', 'status', 'author', 'created_at']
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title']

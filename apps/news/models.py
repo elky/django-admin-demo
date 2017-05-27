@@ -25,7 +25,8 @@ class NewsEntry(models.Model):
     modified_at = models.DateTimeField(default=timezone.now)
 
     class Meta:
-        verbose_name_plural = 'News entries'
+        verbose_name = 'Entry'
+        verbose_name_plural = 'Entries'
 
     def __unicode__(self):
         return self.title
