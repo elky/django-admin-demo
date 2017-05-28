@@ -1,7 +1,8 @@
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
 
 urlpatterns = [
+    url(r'^doc/', include('django.contrib.admindocs.urls')),
     url(r'^', admin.site.urls),
 ]
 

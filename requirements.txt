@@ -1,6 +1,7 @@
 Django==1.11.1
 Pillow==4.1.1
-django-flat-responsive==1.4.0
+django-flat-responsive==1.4.1
+docutils==0.13.1
 gunicorn==19.7.1
 olefile==0.44
 pytz==2017.2
