@@ -1,5 +1,4 @@
 from django.contrib import admin
-from demo.mixins import RestrictUpdate
 from .models import Author, Position, SocialLink
 
 
@@ -9,12 +8,12 @@ class SocialLinkInline(admin.StackedInline):
 
 
 @admin.register(Author)
-class AuthorAdmin(RestrictUpdate, admin.ModelAdmin):
+class AuthorAdmin(admin.ModelAdmin):
     list_display = ['name', 'position', 'active']
     list_editable = ['position']
     inlines = [SocialLinkInline]
 
 
 @admin.register(Position)
-class PositionAdmin(RestrictUpdate, admin.ModelAdmin):
+class PositionAdmin(admin.ModelAdmin):
     list_display = ['title']

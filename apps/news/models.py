@@ -19,7 +19,7 @@ class NewsEntry(models.Model):
                                        help_text='Recommended image resolution: 720x400 pixels')
     status = models.PositiveSmallIntegerField(choices=STATUS_CHOICES, default=0)
     source = models.URLField(blank=True, help_text='Link to a source. Will be shown at the bottom of the news page')
-    author = models.ForeignKey('authors.Author', help_text='Current user if empty')
+    author = models.ForeignKey('authors.Author', help_text='Current user if empty', null=True, on_delete=models.SET_NULL)
     tags = models.ManyToManyField('tags.Tag', blank=True)
     created_at = models.DateTimeField(default=timezone.now)
     modified_at = models.DateTimeField(default=timezone.now)
@@ -36,7 +36,7 @@ class NewsEntry(models.Model):
 
 
 class NewsGallery(models.Model):
-    entry = models.ForeignKey('news.NewsEntry')
+    entry = models.ForeignKey('news.NewsEntry', on_delete=models.CASCADE)
     image = models.ImageField(upload_to='uploads/news')
     description = models.CharField(max_length=200, blank=True)
     copyright = models.CharField(max_length=200, blank=True)

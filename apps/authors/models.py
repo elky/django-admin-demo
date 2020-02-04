@@ -8,7 +8,7 @@ class Author(models.Model):
     name = models.CharField(max_length=300)
     avatar = models.ImageField(upload_to='uploads/avatars')
     bio = models.TextField(blank=True)
-    position = models.ForeignKey('authors.Position')
+    position = models.ForeignKey('authors.Position', on_delete=models.CASCADE)
     active = models.BooleanField(default=True)
 
     def __unicode__(self):
@@ -30,7 +30,7 @@ class SocialLink(models.Model):
         ('instagram', 'Instagram'),
     ]
 
-    author = models.ForeignKey('authors.Author')
+    author = models.ForeignKey('authors.Author', on_delete=models.CASCADE)
     social = models.CharField(max_length=20, choices=SOCIAL_CHOICES)
     link = models.URLField()
 

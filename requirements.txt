@@ -1,8 +1,5 @@
-Django==1.11.1
-Pillow==4.1.1
-django-flat-responsive==1.4.1
-docutils==0.13.1
-gunicorn==19.7.1
-olefile==0.44
-pytz==2017.2
-wsgiref==0.1.2
+Django==2.2.10
+django-flat-responsive==2.0
+Pillow==7.0.0
+pytz==2019.3
+sqlparse==0.3.0
