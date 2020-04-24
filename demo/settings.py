@@ -24,6 +24,7 @@ ALLOWED_HOSTS = ['demo.elky.me']
 
 
 INSTALLED_APPS = [
+    'demo',
     'flat_responsive',
     'django.contrib.admin',
     'django.contrib.admindocs',
@@ -59,6 +60,7 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
+                'django.template.context_processors.static',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
