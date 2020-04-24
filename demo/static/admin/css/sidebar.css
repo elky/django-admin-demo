@@ -1,0 +1,107 @@
+@media (min-width: 992px) {
+
+html, body {
+  height: 100%;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.login {
+  height: auto;
+}
+
+.login #container {
+  height: auto;
+}
+
+#container > div {
+  flex-shrink: 0;
+}
+
+#container > .main {
+  display: flex;
+  flex: 1 0;
+  overflow: auto;
+}
+
+.main > .content {
+  flex:  1 0;
+  max-width: 100%;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  height: 100%;
+  max-height: 100vh;
+}
+
+.toggle-sidebar {
+  z-index: 20;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 23px;
+  width: 23px;
+  height: 100%;
+  border-right: 1px solid #eaeaea;
+  background-color: #ffffff;
+  cursor: pointer;
+  font-size: 20px;
+  color: #447e9b;
+}
+
+#sidebar {
+  z-index: 15;
+  flex: 0 0 275px;
+  left: -276px;
+  margin-left: -276px;
+  border-top: 1px solid transparent;
+  border-right: 1px solid #eaeaea;
+  background-color: #ffffff;
+  overflow: auto;
+}
+
+#sidebar + .content {
+  margin-left: -24px;
+}
+
+.toggle-sidebar::before {
+  content: '\00BB';
+}
+
+.main.shifted .toggle-sidebar::before {
+  content: '\00AB';
+}
+
+.main.shifted > #sidebar {
+  left: 24px;
+  margin-left: 0;
+}
+
+#sidebar .module td:last-child {
+  display: none;
+}
+
+#sidebar .module th {
+  width: 100%;
+}
+
+#sidebar .module th,
+#sidebar .module caption {
+  padding-left: 16px;
+}
+
+}
+
+
+@media (max-width: 991px) {
+  .toggle-sidebar, #sidebar {
+    display: none;
+  }
+}

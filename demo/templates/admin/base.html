@@ -59,6 +59,14 @@
     {% endblock %}
     {% endif %}
 
+    <div class="main" id="main">
+        {% if not is_popup %}
+            {% block admin_sidebar %}
+                {% include "admin/sidebar.html" %}
+            {% endblock %}
+        {% endif %}
+
+    <div class="content">
     {% block messages %}
         {% if messages %}
         <ul class="messagelist">{% for message in messages %}
@@ -81,8 +89,11 @@
     <!-- END Content -->
 
     {% block footer %}<div id="footer"></div>{% endblock %}
+    </div>
+    </div>
 </div>
 <!-- END Container -->
 
+<script src="{% static 'admin/js/sidebar.js' %}"></script>
 </body>
 </html>
