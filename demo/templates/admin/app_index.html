@@ -13,6 +13,10 @@
 {% endfor %}
 </div>
 {% endblock %}
+
+{% block admin_sidebar %}
+  {% include "admin/sidebar.html" %}
+{% endblock %}
 {% endif %}
 
 {% block sidebar %}{% endblock %}
